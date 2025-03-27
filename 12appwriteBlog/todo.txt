@@ -1,0 +1,6 @@
+post - redux
+nav - add - new api for creating post
+google authetiction
+tiny solution
+get post bug and logout post bug
+profile

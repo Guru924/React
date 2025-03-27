@@ -1,0 +1,32 @@
+Open source plugins ->
+
+[
+"Accordion",
+"Anchor",
+"Autolink",
+"Autoresize",
+"Autosave",
+"Character Map",
+"Code",
+"Code Sample",
+"Directionality",
+"Emoticons",
+"Full Screen",
+"Help",
+"Image",
+"Import CSS",
+"Insert Date/Time",
+"Link",
+"Lists",
+"List Styles",
+"Media",
+"Nonbreaking Space",
+"Page Break",
+"Preview",
+"Quick Toolbars",
+"Save",
+"Search and Replace",
+"Table",
+"Visual Blocks",
+"Visual Characters"
+]
