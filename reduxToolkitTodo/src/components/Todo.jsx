@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {removeTodo, updateTodo} from '../feature/todo/todoSlice'
 
@@ -9,6 +9,17 @@ function Todos() {
     const inputRef = useRef(null)
     let editTodo
     const [editInput, setEditInput] = useState('');
+    const [tId, setTId] = useState(0);
+
+    useEffect(()=>{
+      console.log("test")
+      // setEditInput(()=> todos.filter((todo)=> todo.id === tId))
+      if(tId != 0){
+        let z = todos.filter((todo)=> todo.id === tId)
+        setEditInput(z[0].text)
+      }
+      // if(z[0].text && setEditInput(z[0].text));
+    }, [tId])
 
   return (
     <>
@@ -45,7 +56,8 @@ function Todos() {
              onClick={()=>{
               // todo.id ?
               inputRef.current.focus()
-              setEditInput(todo.text)
+              // setEditInput(todo.text)
+              setTId(todo.id)
              }}
               className="text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md"
             >
@@ -66,7 +78,7 @@ function Todos() {
       <button
         // type="submit"
         className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-        onClick={()=> console.log(editId.id)}
+        onClick={()=> dispatch(updateTodo({tId, editInput}))}
       >
         Update
       </button>
